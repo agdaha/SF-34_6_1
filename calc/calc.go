@@ -22,10 +22,10 @@ func (c calculator) Calculate(n1 float64, m string, n2 float64) (float64, error)
 	case "/":
 		ans, err := div(n1, n2)
 		if err != nil {
-			return 0, err
-		} else {
-			return ans, nil
-		}
+			return 0, fmt.Errorf("division: %v",err)
+		} 
+	
+	        return ans, nil	
 	default:
 		return 0, errors.New("несуществующая операция")
 	}
