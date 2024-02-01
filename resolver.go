@@ -22,15 +22,18 @@ func Resolver(l []string) ([]string, error) {
 		if len(groups) != 5 {
 			continue
 		}
+		
 		n1, err := strconv.ParseFloat(groups[1], 64)
 		if err != nil {
 			continue
 		}
+		
 		op := groups[2]
 		n2, err := strconv.ParseFloat(groups[3], 64)
 		if err != nil {
 			continue
 		}
+		
 		res, err := calc.Calculate(n1, op, n2)
 		if err != nil {
 			continue
